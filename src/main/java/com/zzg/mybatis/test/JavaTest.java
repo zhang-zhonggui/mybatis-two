@@ -33,10 +33,12 @@ public class JavaTest {
         StudentQuery studentQuery=new StudentQuery();
         studentQuery.setName("张");
         studentQuery.setPageNumber(2);
-        studentQuery.setPageCount(3);
+        studentQuery.setPageCount(2);
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
         List<Students> students1 = mapper.studentQuery(studentQuery);
         System.out.println(students1);
+        Long aLong = mapper.queryTotalCount(studentQuery);
+        System.out.println(aLong);
     }
 //    @Test
 //    public void testStudent(){

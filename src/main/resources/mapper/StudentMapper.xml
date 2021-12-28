@@ -23,6 +23,10 @@
     <select id="studentQuery" resultType="Students">
         select * from students
         <include refid="QuerySql"/>
-limit #{index},#{PageCount}
+        limit #{index},#{PageCount}
+    </select>
+    <select id="queryTotalCount" resultType="long">
+        select count(*) from students
+        <include refid="QuerySql"/>
     </select>
 </mapper>
